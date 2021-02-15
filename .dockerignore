@@ -1,0 +1,9 @@
+.env
+.env-example
+.editorconfig
+.git
+.cache
+Server.cfg
+Server.log
+Resources/
+Dockerfile.*
