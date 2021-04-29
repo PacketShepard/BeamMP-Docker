@@ -1,0 +1,29 @@
+version: '3'
+services:
+  beammp:
+    image: "packetshepard/beammp"
+    container_name: beammp
+    ports:
+     - "30814:30814/udp"
+     - "30814:30814/tcp"
+    volumes:
+      - ./Resources:/beammp/Resources:ro
+      - ./Server.log:/beammp/Server.log
+    environment:
+     - PGID
+     - PUID
+     - TZ
+     - Debug
+     - Private
+     - Port
+     - Cars
+     - MaxPlayers
+     - Map
+     - Name
+     - Desc
+     - use
+     - AuthKey
+    restart: unless-stopped
+
+#networks:
+#  dns:
