@@ -4,7 +4,8 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/packetshepard/beammp.svg)][hub]
 
 # [BeamMP-Server in docker][hub]
-BeamMP-Server Auto Builder using Docker with Multi-image Debian 10
+BeamMP-Server Auto Builder using Docker with multi-image Debian 10
+
 Lightweight final image. Approximately 187 MB.
 
 ## Usage

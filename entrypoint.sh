@@ -14,4 +14,15 @@ use = "${use}" # Resource file name
 AuthKey = "${AuthKey}" # Auth Key
 EOF
 
-exec ./BeamMP-Server
+USER_NAME=${USER_NAME:-beammp}
+
+PUID=${PUID:-811}
+PGID=${PGID:-811}
+
+useradd -M -r -s /usr/sbin/nologin "$USER_NAME"
+groupmod -o -g "$PGID" "$USER_NAME"
+usermod -o -u "$PUID" "$USER_NAME"
+
+chown "$USER_NAME":"$USER_NAME" /beammp
+
+exec s6-setuidgid ${USER_NAME} ./BeamMP-Server
