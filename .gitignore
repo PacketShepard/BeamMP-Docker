@@ -1,6 +1,5 @@
 .env
 .cache
-Server.cfg
 Server.log
 Resources/
 Dockerfile.*

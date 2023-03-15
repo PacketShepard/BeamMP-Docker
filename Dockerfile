@@ -33,8 +33,6 @@ RUN mkdir /beammp
 
 WORKDIR /beammp
 
-ADD https://github.com/just-containers/s6-overlay/releases/download/v2.2.0.1/s6-overlay-amd64-installer /tmp/
-RUN chmod +x /tmp/s6-overlay-amd64-installer && /tmp/s6-overlay-amd64-installer /
 
 RUN printf "deb http://deb.debian.org/debian buster-backports main\n" > /etc/apt/sources.list.d/buster-backports.list && \
     apt-get update && apt-get install -y --no-install-recommends \
@@ -64,4 +62,4 @@ ENV \
      AuthKey=""
 
 EXPOSE 30814
-CMD ["./entrypoint.sh" ]
+ENTRYPOINT ["./entrypoint.sh" ]

@@ -6,6 +6,8 @@ services:
     ports:
      - "30814:30814/udp"
      - "30814:30814/tcp"
+    networks:
+     - beammp_net
     volumes:
       - ./Resources:/beammp/Resources:ro
       - ./Server.log:/beammp/Server.log
@@ -25,5 +27,5 @@ services:
      - AuthKey
     restart: unless-stopped
 
-#networks:
-#  dns:
+networks:
+    beammp_net:

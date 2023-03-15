@@ -2,8 +2,10 @@
 .env-example
 .editorconfig
 .git
+.gitattributes
+.gitignore
 .cache
-Server.cfg
 Server.log
 Resources/
 Dockerfile.*
+docker-compose.yml
